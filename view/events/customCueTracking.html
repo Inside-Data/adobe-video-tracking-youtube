@@ -1,0 +1,47 @@
+<!doctype html>
+<html class="spectrum spectrum--medium spectrum--large spectrum--light" lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="../global.css">
+  <script src="../index.js"></script>
+  <script>
+    loadIcons('../spectrum-css.svg');
+  </script>
+</head>
+<body>
+
+<form class="spectrum-Form">
+
+  <div class="spectrum-Form-item">
+    <label class="spectrum-Form-itemLabel spectrum-FieldLabel--left" for="cue">Video Cue Percentage (out of 100) to trigger event</label>
+    <div class="spectrum-Form-itemField">
+      <input class="spectrum-Textfield" aria-invalid="false" type="text" placeholder="Enter your cue percentage" id="cue">
+    </div>
+  </div>
+
+</form>
+
+<script src="https://assets.adobedtm.com/activation/reactor/extensionbridge/extensionbridge.min.js"></script>
+<script>
+  window.extensionBridge.register({
+    init: function(info) {
+      document.getElementById('cue').value = (info.settings && info.settings.cue) || 50;
+    },
+
+    getSettings: function() {
+      return {
+        cue: Number(document.getElementById('cue').value)
+      };
+    },
+
+    validate: function() {
+      var cueField = document.getElementById('cue');
+      var cue = Number(cueField.value);
+      cueField.invalid = isNaN(cue) || cue <= 0 || cue >= 100;
+      return !cueField.invalid;
+    }
+  });
+</script>
+</body>
+</html>

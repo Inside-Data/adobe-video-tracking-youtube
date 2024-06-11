@@ -1,0 +1,166 @@
+{
+  "displayName": "Video Tracking for YouTube",
+  "name": "video-tracking-youtube",
+  "platform": "web",
+  "version": "2.1.0",
+  "description": "Custom link tracking-based solution for Adobe Analytics that enables YouTube players that use embedded <iframe> tags for easy configuration of video events like start, pause, resume, complete, etc., and customizable cue points. By using data elements within Launch rules, video information including Player Name, Video ID, Video Name, Video Length can also be captured.",
+  "author": {
+    "name": "Adobe Consulting Services",
+    "email": "acs-launch-extensions@adobe.com"
+  },
+  "viewBasePath": "src/view/",
+  "main": "src/lib/main-module.js",
+  "events": [
+    {
+      "displayName": "Video Resume",
+      "name": "video-play",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "libPath": "src/lib/events/videoPlay.js"
+    },
+    {
+      "displayName": "Video Pause",
+      "name": "videopause",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "libPath": "src/lib/events/videoPause.js"
+    },
+    {
+      "displayName": "Video Start",
+      "name": "videostart",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "libPath": "src/lib/events/videoStart.js"
+    },
+    {
+      "displayName": "Video Complete",
+      "name": "videocomplete",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "libPath": "src/lib/events/videoComplete.js"
+    },
+    {
+      "displayName": "Video Buffer",
+      "name": "videobuffer",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "libPath": "src/lib/events/videoBuffer.js"
+    },
+    {
+      "displayName": "Video Ready",
+      "name": "videoready",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "libPath": "src/lib/events/videoReady.js"
+    },
+    {
+      "displayName": "Custom Cue Tracking",
+      "name": "custom-cue-tracking",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "properties": {
+          "cue": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 100
+          }
+        }
+      },
+      "libPath": "src/lib/events/customCueTracking.js",
+      "viewPath": "events/customCueTracking.html"
+    },
+    {
+      "displayName": "Video Replay",
+      "name": "video-replay",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "libPath": "src/lib/events/videoReplay.js"
+    }
+  ],
+  "iconPath": "adobe_icon.svg",
+  "exchangeUrl": "https://exchange.adobe.com/experiencecloud.details.104659.video-tracking-youtube.html",
+  "dataElements": [
+    {
+      "displayName": "Playhead Position",
+      "name": "playhead-position",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "libPath": "src/lib/dataElements/playheadPosition.js"
+    },
+    {
+      "displayName": "Video Duration",
+      "name": "video-duration",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "libPath": "src/lib/dataElements/videoDuration.js"
+    },
+    {
+      "displayName": "Video ID",
+      "name": "video-id",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "libPath": "src/lib/dataElements/videoId.js"
+    },
+    {
+      "displayName": "Video Name",
+      "name": "video-name",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "libPath": "src/lib/dataElements/videoName.js"
+    },
+    {
+      "displayName": "Video URL",
+      "name": "video-url",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "libPath": "src/lib/dataElements/videoUrl.js"
+    },
+    {
+      "displayName": "Extension Version",
+      "name": "extension-version",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "libPath": "src/lib/dataElements/extensionVersion.js"
+    }
+  ]
+}
