@@ -115,7 +115,7 @@ function addQSParm(curURL, name, value) {
 	return curURL;
 }
 
-document.onreadystatechange = function() {
+function initYTPlayer() {
 	if (document.readyState === 'complete') {
 
 		/*YouTube Player updates required by Adobe Video Tracking module */
@@ -161,3 +161,12 @@ document.onreadystatechange = function() {
 		}                                //2.1.0 UPDATE:
 	}
 };
+
+function ready(fn) {
+	if ("loading" !== document.readyState) {
+		fn();
+	}else{
+		document.addEventListener('DOMContentLoaded', fn);
+	}
+}
+ready(initYTPlayer);
